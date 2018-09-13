@@ -14,10 +14,12 @@ public class Bullet : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+    //making bullet go zoom
 	void Update () {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, speed);
     }
 
+    //kill enemies with this and destroying on contact
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
@@ -27,6 +29,7 @@ public class Bullet : MonoBehaviour {
         }
     }
 
+    //destroying bullet off screen
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212195464008865368}
   - component: {fileID: 114948580277549190}
   - component: {fileID: 61549151045348306}
+  - component: {fileID: 50215886279333218}
   m_Layer: 0
   m_Name: enemy1
   m_TagString: Enemy
@@ -36,12 +37,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645934177974374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.74, y: 8.572295, z: 0}
+  m_LocalPosition: {x: 0.049, y: 8.621, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50215886279333218
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645934177974374}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61549151045348306
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -79,6 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 1
+  enemySpeed: -5
+  scoreValue: 10
+  enemyDamage: 1
 --- !u!212 &212195464008865368
 SpriteRenderer:
   m_ObjectHideFlags: 1

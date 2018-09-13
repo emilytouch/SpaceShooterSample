@@ -10,8 +10,9 @@ public class Boundary
 }
 
 public class PlayerController : MonoBehaviour {
+
+    public Text gameOverText;
     public Boundary boundary;
-    public int health;
     public int currentHealth;
     public float speed;
     public GameObject shot;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //shot.GetComponent<Bullet>();
+        gameOverText.text = "";
 	}
 	
 	// Update is called once per frame
@@ -34,6 +35,11 @@ public class PlayerController : MonoBehaviour {
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         }
 
+        if (currentHealth <= 0)
+        {
+            gameOverText.text = "Game Over";
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -50,5 +56,13 @@ public class PlayerController : MonoBehaviour {
             Mathf.Clamp(GetComponent<Rigidbody2D>().position.x, boundary.xMin, boundary.xMax),
             Mathf.Clamp(GetComponent<Rigidbody2D>().position.y, boundary.yMin, boundary.yMax)
             );
+    }
+
+    //player takes damage
+    public void giveDamage(int enemyDamage)
+    {
+        currentHealth -= enemyDamage;
+        GameObject.Find("GameController").GetComponent<GameController>().playerHealth -= enemyDamage;
+        GameObject.Find("GameController").GetComponent<GameController>().SetHealthText();
     }
 }
