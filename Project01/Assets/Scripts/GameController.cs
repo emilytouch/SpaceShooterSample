@@ -14,12 +14,12 @@ public class GameController : MonoBehaviour {
     //spawning enemies
     public GameObject[] enemies;
     public Vector2 spawnValues;
-    public float spawnWait;
-    public float spawnMostWait;
-    public float spawnLeastWait;
+    public float spawnWait = 3f;
+    public float spawnVar = 1f;
+    public float spawnInc = -0.1f;
     public int startWait;
-
     int randEnemy;
+
 
     // Use this for initialization
     void Start () {
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
+
 	}
 
     IEnumerator WaitSpawner()
@@ -52,10 +52,20 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(startWait);
         while (true)
         {
-            randEnemy = Random.Range(0, 9);
-            Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), 11);
-            Instantiate(enemies[randEnemy], spawnPosition, gameObject.transform.rotation);
-            yield return new WaitForSeconds(spawnWait);
+            randEnemy = Random.Range(0, 9); //gives different enemies different chances of spawning
+            Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), 11); //area where they spawn
+            Instantiate(enemies[randEnemy], spawnPosition, gameObject.transform.rotation); //actually spawning
+            yield return new WaitForSeconds(spawnWait + Random.value * spawnVar); //wait time
+
+            //faster spawn time as time goes on
+            if (spawnWait - spawnInc > 0.5)
+            {
+                spawnWait -= spawnInc;
+            }
+            if (spawnWait <= 0.5)
+            {
+                spawnWait = 0.5f;
+            }
         }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public float speed;
-    public int damage;
     
 
     // Use this for initialization
@@ -13,7 +12,6 @@ public class Bullet : MonoBehaviour {
         
 	}
 	
-	// Update is called once per frame
     //making bullet go zoom
 	void Update () {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, speed);
@@ -22,10 +20,10 @@ public class Bullet : MonoBehaviour {
     //kill enemies with this and destroying on contact
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyController>().giveDamage(damage);
+            other.GetComponent<EnemyController>().giveDamage(GameObject.Find("Player").GetComponent<PlayerController>().damage);
+            Destroy(gameObject);
         }
     }
 

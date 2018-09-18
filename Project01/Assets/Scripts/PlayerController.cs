@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour {
 
     public Text gameOverText;
     public Boundary boundary;
-    public int currentHealth;
     public float speed;
+
+    public int damage;
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
-
     private float nextFire;
 
     // Use this for initialization
@@ -35,10 +35,21 @@ public class PlayerController : MonoBehaviour {
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         }
 
-        if (currentHealth <= 0)
+        if (GameObject.Find("GameController").GetComponent<GameController>().playerHealth <= 0)
         {
             gameOverText.text = "Game Over";
             Destroy(gameObject);
+        }
+
+        if (GameObject.Find("GameController").GetComponent<GameController>().playerHealth >= 6)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().playerHealth = 6;
+            GameObject.Find("GameController").GetComponent<GameController>().SetHealthText();
+        }
+
+        if (damage >= 4)
+        {
+            damage = 4;
         }
     }
 
@@ -61,7 +72,7 @@ public class PlayerController : MonoBehaviour {
     //player takes damage
     public void giveDamage(int enemyDamage)
     {
-        currentHealth -= enemyDamage;
+        //currentHealth -= enemyDamage;
         GameObject.Find("GameController").GetComponent<GameController>().playerHealth -= enemyDamage;
         GameObject.Find("GameController").GetComponent<GameController>().SetHealthText();
     }

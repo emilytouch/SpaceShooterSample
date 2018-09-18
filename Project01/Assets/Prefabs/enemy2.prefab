@@ -103,6 +103,16 @@ MonoBehaviour:
   enemySpeed: -3
   scoreValue: 30
   enemyDamage: 1
+  enemy: {fileID: 1725129748603644}
+  powerUps:
+  - {fileID: 1802347135371250, guid: 98b82d7bcfe276a42884558a22a7cd9b, type: 2}
+  - {fileID: 1138624366160504, guid: 908b0326ae34e3e428ef79f70f2f9718, type: 2}
+  - {fileID: 1309412489243494, guid: 7711699d4307fba488c7af66e06f65c5, type: 2}
+  - {fileID: 1309412489243494, guid: 7711699d4307fba488c7af66e06f65c5, type: 2}
+  - {fileID: 1309412489243494, guid: 7711699d4307fba488c7af66e06f65c5, type: 2}
+  - {fileID: 1309412489243494, guid: 7711699d4307fba488c7af66e06f65c5, type: 2}
+  addHealth: 0
+  addPower: 0
 --- !u!212 &212309352201861934
 SpriteRenderer:
   m_ObjectHideFlags: 1

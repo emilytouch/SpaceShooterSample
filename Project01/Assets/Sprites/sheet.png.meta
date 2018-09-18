@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 338cd620a4bbac4499dd5ef11fbb3da6
-timeCreated: 1536649751
+timeCreated: 1536854516
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -122,13 +122,13 @@ TextureImporter:
       name: powerUp1
       rect:
         serializedVersion: 2
-        x: 775
-        y: 310
-        width: 38
-        height: 35
+        x: 777
+        y: 312
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 3, y: 2, z: 2, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -137,9 +137,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 740
-        y: 229
+        y: 230
         width: 33
-        height: 35
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: powerUp3
       rect:
         serializedVersion: 2
-        x: 489
+        x: 491
         y: 809
-        width: 35
-        height: 34
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

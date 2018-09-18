@@ -468,9 +468,9 @@ MonoBehaviour:
   - {fileID: 1062999913679792, guid: 660a00c636ab79a49883820601e7e828, type: 2}
   - {fileID: 1062999913679792, guid: 660a00c636ab79a49883820601e7e828, type: 2}
   spawnValues: {x: 9, y: 0}
-  spawnWait: 0
-  spawnMostWait: 2
-  spawnLeastWait: 0.5
+  spawnWait: 5
+  spawnVar: 1
+  spawnInc: 0.1
   startWait: 1
 --- !u!4 &1519370678
 Transform:
@@ -521,8 +521,8 @@ MonoBehaviour:
     xMax: 9
     yMin: 0
     yMax: 10
-  currentHealth: 3
   speed: 10
+  damage: 1
   shot: {fileID: 1822326799724892, guid: e7d2bfebce16cc341b5a5bc571c88a25, type: 2}
   shotSpawn: {fileID: 1060145217}
   fireRate: 0.25
